@@ -24,7 +24,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 setTag();
                 $scope.$apply(function () {
                     $scope.image = response.data.data.image_original_url;
-                }
+                });
                 length = parseInt(response.data.data.image_frames);
                 $scope.timer = length *190;
                 if ($scope.timer > 6000)
