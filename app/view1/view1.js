@@ -36,7 +36,6 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.getImage();
                     return;
                 }
-                console.log(api)
                 if (api == 0) {
                     length = parseInt(response.data.data.image_frames);
                     $scope.image = response.data.data.image_original_url;
@@ -59,6 +58,9 @@ angular.module('myApp.view1', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 
           }, function errorCallback(response) {
+                api = Math.floor((Math.random() * urls.length));
+                $scope.getImage();
+                return
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           });
@@ -73,7 +75,7 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dance','ok','girl+power','africa','dance+crew', 'break+dance', 'girl'];
+            arr= ['dance','ok','girl power','africa','dance crew', 'break dance', 'girl'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
@@ -88,7 +90,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
             timerRule = true;
-            arr= ['bruce+lee','lucy','sushi','anime','japan', 'tokyo', 'asian', 'dbz'];
+            arr= ['bruce lee','lucy','sushi','anime','japan', 'tokyo', 'asian', 'dbz'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
@@ -98,25 +100,25 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
             timerRule = false;
-            arr= ['bernie+sanders','porn','drugs','money','win', 'donald+trump', 'oil', 'animation', 'cash', 'omg'];
+            arr= ['bernie sanders','porn','drugs','money','win', 'donald trump', 'oil', 'animation', 'cash', 'omg'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             timerRule = true;
-            arr= ['secret','doin+it','want+it','i+dont+know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits'];
+            arr= ['secret','doin it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'fuck'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
             timerRule = true;
-            arr= ['funk','dance+party','going+out','aww+yeah','ftw', 'dance+floor', 'get+down'];
+            arr= ['funk','dance party','going out','aww yeah','ftw', 'dance floor', 'get down'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1725 && aud.currentTime < 1825){
-            arr= ['drums','conga','bass+player','the+beat','clap', 'rhythm', 'bass'];
+            arr= ['drums','conga','bass player','the beat','clap', 'rhythm', 'bass', 'music', 'drum', 'drummer'];
             int = Math.floor((Math.random() * arr.length));
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1825 && aud.currentTime < 1900){
-            arr= ['the+count','ten','start+over','1-2-3','counting', '', 'one+two+three', 'love'];
+            arr= ['the count','ten','star +over','1 2 3','counting', '', 'one two three', 'love'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey+apiKey;
         }
