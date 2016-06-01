@@ -19,21 +19,14 @@ angular.module('myApp.view1', ['ngRoute'])
           method: 'GET',
           url: 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC' + tag
         }).then(function successCallback(response) {
-                
-                console.log(aud.currentTime);
-                setTag();
-                
-                    $scope.image = response.data.data.image_original_url;
-                
+                $scope.image = response.data.data.image_original_url;
                 length = parseInt(response.data.data.image_frames);
                 $scope.timer = length *190;
-                if ($scope.timer > 6000)
-                    $scope.timer = 6000;
+                if ($scope.timer > 4000)
+                    $scope.timer = 4000;
                 $timeout(function(){
-                    $scope.$apply(function () {
-                        $scope.getImage();
-                    });
-                    
+                    setTag();
+                    $scope.getImage();
                 }, $scope.timer);                            
                 
           }, function errorCallback(response) {
