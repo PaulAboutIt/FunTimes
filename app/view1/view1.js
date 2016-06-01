@@ -39,11 +39,11 @@ angular.module('myApp.view1', ['ngRoute'])
     function setTag() {
         var arr = [];
         var int = Math.floor((Math.random() * 5));
-        if(aud.currentTime < 165){
+        if(aud.currentTime < 160){
             /*It's OK Now*/
             arr= ['dancing+girl','ok','girl+power','africa','dance+crew']
             return tag = '&tag=' + arr[int];
-        } else if(aud.currentTime > 165 && aud.currentTime < 240){
+        } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
             arr= ['soldier','war','fight','struggle','guns']
             return tag = '&tag=' + arr[int];
