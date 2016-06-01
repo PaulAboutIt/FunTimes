@@ -14,6 +14,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var aud = document.getElementById("myAudio");
     $scope.timer = 2000;
     var tag = '';
+    var timerRule = true;
     $scope.getImage = function() {
         $http({
           method: 'GET',
@@ -22,7 +23,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.image = response.data.data.image_original_url;
                 length = parseInt(response.data.data.image_frames);
                 $scope.timer = length *190;
-                if ($scope.timer > 4000)
+                if ($scope.timer > 4000 && timerRule = true)
                     $scope.timer = 4000;
                 $timeout(function(){
                     setTag();
@@ -48,28 +49,32 @@ angular.module('myApp.view1', ['ngRoute'])
             arr= ['soldier','war','fight','struggle','guns']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
-            arr= ['cosmic','time+space','science','space','mind+blown']
+            timerRule = false;
+            arr= ['nasa','technology','science','space','mind+blown']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
-            arr= ['bruce lee','lucy','sushi','anime','japan']
+            timerRule = true;
+            arr= ['bruce+lee','lucy','sushi','anime','japan']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
             arr= ['beach','jamaica','take+it+easy','slow+motion','time']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
+            timerRule = false;
             arr= ['bernie+sanders','porn','drugs','money','lol']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             arr= ['secret','doin+it','want+it','i+dont+know','strippers']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
+            timerRule = true;
             arr= ['funk','dance+party','going+out','aww+yeah','ftw']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1725 && aud.currentTime < 1825){
             arr= ['drums','conga','bass+player','the+beat','clap']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1825 && aud.currentTime < 1900){
-            arr= ['the+count','ten','start+over','1+2+3','counting']
+            arr= ['the+count','ten','start+over','1-2-3','counting']
             return tag = '&tag=' + arr[int];
         }
         else {
