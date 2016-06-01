@@ -61,7 +61,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
             timerRule = false;
-            arr= ['bernie+sanders','porn','drugs','money','lol']
+            arr= ['bernie+sanders','porn','drugs','money','win']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             arr= ['secret','doin+it','want+it','i+dont+know','strippers']
