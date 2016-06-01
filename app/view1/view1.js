@@ -40,29 +40,29 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.getImage();
     function setTag() {
         var arr = [];
-        var int = Math.floor((Math.random() * 4));
+        var int = Math.floor((Math.random() * 5));
         if(aud.currentTime < 165){
             /*It's OK Now*/
-            arr= ['dancing+girl','ok','girl+power','africa','now']
+            arr= ['dancing+girl','ok','girl+power','africa','dance+crew']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 165 && aud.currentTime < 240){
             /*I'm a Soldier*/
-            arr= ['soldier','war','fight','struggle','blunt']
+            arr= ['soldier','war','fight','struggle','guns']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
-            arr= ['cosmic','time','science','space','deep']
+            arr= ['cosmic','time+space','science','space','mind+blown']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
             arr= ['bruce lee','lucy','sushi','anime','japan']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
-            arr= ['beach','jamaica','easy','slow','time']
+            arr= ['beach','jamaica','take+it+easy','slow+motion','time']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
-            arr= ['bernie sanders','bernie sanders','drugs','money','lol']
+            arr= ['bernie+sanders','porn','drugs','money','lol']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
-            arr= ['trip','doing+it','i+want','i+dont+know','float']
+            arr= ['secret','doin+it','want+it','i+dont+know','strippers']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
             arr= ['funk','dance+party','going+out','aww+yeah','ftw']
