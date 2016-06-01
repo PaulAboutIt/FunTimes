@@ -23,8 +23,8 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.image = response.data.data.image_original_url;
                 length = parseInt(response.data.data.image_frames);
                 $scope.timer = length *190;
-                if ($scope.timer > 4000 && timerRule = true)
-                    $scope.timer = 4000;
+                if ($scope.timer > 4200 && timerRule = true)
+                    $scope.timer = 4200;
                 $timeout(function(){
                     setTag();
                     $scope.getImage();
