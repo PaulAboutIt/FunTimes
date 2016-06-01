@@ -73,7 +73,7 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dancing+girl','ok','girl+power','africa','dance+crew', 'break+dance', 'girls']
+            arr= ['dance','ok','girl+power','africa','dance+crew', 'break+dance', 'girl']
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
