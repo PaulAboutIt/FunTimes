@@ -23,7 +23,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.image = response.data.data.image_original_url;
                 length = parseInt(response.data.data.image_frames);
                 $scope.timer = length *190;
-                if ($scope.timer > 4200 && timerRule = true)
+                if ($scope.timer > 4200 && timerRule == true)
                     $scope.timer = 4200;
                 $timeout(function(){
                     setTag();
@@ -42,29 +42,29 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 5));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dancing+girl','ok','girl+power','africa','dance+crew']
+            arr= ['dancing+girl','ok','girl+power','africa','dance+crew', 'break+dance']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
-            arr= ['soldier','war','fight','struggle','guns']
+            arr= ['soldier','war','fight','struggle','guns', 'ninja']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
             timerRule = false;
-            arr= ['nasa','technology','science','space','mind+blown']
+            arr= ['nasa','technology','science','space','mind+blown', 'wow']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
             timerRule = true;
-            arr= ['bruce+lee','lucy','sushi','anime','japan']
+            arr= ['bruce+lee','lucy','sushi','anime','japan', 'tokyo']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
-            arr= ['beach','jamaica','take+it+easy','slow+motion','time']
+            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'swim+suit']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
             timerRule = false;
-            arr= ['bernie+sanders','porn','drugs','money','win']
+            arr= ['bernie+sanders','porn','drugs','money','win', 'donald+trump']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
-            arr= ['secret','doin+it','want+it','i+dont+know','strippers']
+            arr= ['secret','doin+it','want+it','i+dont+know','strippers', 'sex']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
             timerRule = true;
