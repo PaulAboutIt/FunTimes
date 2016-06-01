@@ -73,41 +73,51 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dance','ok','girl+power','africa','dance+crew', 'break+dance', 'girl']
+            arr= ['dance','ok','girl+power','africa','dance+crew', 'break+dance', 'girl'];
+            int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
-            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle']
+            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle'];
+            int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
             timerRule = false;
-            arr= ['nasa','technology','science','space','mind+blown', 'wow', '']
+            arr= ['nasa','technology','science','space','mind+blown', 'wow', 'animation', 'robot'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
             timerRule = true;
-            arr= ['bruce+lee','lucy','sushi','anime','japan', 'tokyo', 'asian']
+            arr= ['bruce+lee','lucy','sushi','anime','japan', 'tokyo', 'asian', 'dbz'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
             timerRule = false;
-            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'bikini', '420']
+            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'bikini', '420'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
             timerRule = false;
-            arr= ['bernie+sanders','porn','drugs','money','win', 'donald+trump', 'oil']
+            arr= ['bernie+sanders','porn','drugs','money','win', 'donald+trump', 'oil', 'animation', 'cash', 'omg'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             timerRule = true;
-            arr= ['secret','doin+it','want+it','i+dont+know','strippers', 'sex', 'boobs']
+            arr= ['secret','doin+it','want+it','i+dont+know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
             timerRule = true;
-            arr= ['funk','dance+party','going+out','aww+yeah','ftw', 'dance+floor', 'get+down']
+            arr= ['funk','dance+party','going+out','aww+yeah','ftw', 'dance+floor', 'get+down'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1725 && aud.currentTime < 1825){
-            arr= ['drums','conga','bass+player','the+beat','clap', 'rhythm', 'bass']
+            arr= ['drums','conga','bass+player','the+beat','clap', 'rhythm', 'bass'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1825 && aud.currentTime < 1900){
-            arr= ['the+count','ten','start+over','1-2-3','counting', '', 'one+two+three']
+            arr= ['the+count','ten','start+over','1-2-3','counting', '', 'one+two+three', 'love'];
+            int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey+apiKey;
         }
         else {
