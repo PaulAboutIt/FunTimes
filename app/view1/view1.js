@@ -57,6 +57,7 @@ angular.module('myApp.view1', ['ngRoute'])
             arr= ['bruce+lee','lucy','sushi','anime','japan', 'tokyo']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
+            timerRule = false;
             arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'swim+suit']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
@@ -64,6 +65,7 @@ angular.module('myApp.view1', ['ngRoute'])
             arr= ['bernie+sanders','porn','drugs','money','win', 'donald+trump']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
+            timerRule = true;
             arr= ['secret','doin+it','want+it','i+dont+know','strippers', 'sex']
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
