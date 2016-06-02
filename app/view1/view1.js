@@ -75,7 +75,7 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dance','ok','girl power','africa','dance crew', 'break dance', 'girl'];
+            arr= ['dance','ok', 'okay', 'ok now', 'girl power','africa','dance crew', 'break dance', 'girl'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
@@ -90,12 +90,12 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
             timerRule = true;
-            arr= ['bruce lee','lucy','sushi','anime','japan', 'tokyo', 'asian', 'dbz'];
+            arr= ['bruce lee','lucy','sushi','anime', 'japan', 'tokyo', 'asian', 'dbz', 'japanese', 'kung fu'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
             timerRule = false;
-            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'bikini', '420'];
+            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'bikini', '420', 'splash'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
