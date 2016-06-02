@@ -32,10 +32,10 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.getImage();
                     return;
                 }
-                if(parseInt(response.data.data.image_height) < 175) {
+                /*if(response.length < 1) {
                     $scope.getImage();
                     return;
-                }
+                }*/
                 if (api == 0) {
                     length = parseInt(response.data.data.image_frames);
                     $scope.image = response.data.data.image_original_url;
@@ -85,7 +85,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
             timerRule = false;
-            arr= ['nasa','technology','science','space','mind blown', 'wow', 'animation', 'robot', 'glitch', 'illustration', 'loop', 'pixel'];
+            arr= ['nasa','technology','science','space','mind blown', 'wow', 'animation', 'robot', 'glitch', 'illustration', 'loop'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
