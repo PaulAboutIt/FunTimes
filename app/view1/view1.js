@@ -105,7 +105,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             timerRule = true;
-            arr= ['secret','doin it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'butt', 'horny'];
+            arr= ['do it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'butt', 'horny'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
