@@ -32,7 +32,7 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.getImage();
                     return;
                 }
-                if(response.length < 1) {
+                if(parseInt(response.data.data.image_height) < 175) {
                     $scope.getImage();
                     return;
                 }
