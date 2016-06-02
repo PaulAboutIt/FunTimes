@@ -87,7 +87,7 @@ angular.module('myApp.view2', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 500 && aud.currentTime < 785){
-            timerRule = false;
+            timerRule = true;
             arr= ['work', 'robot', 'cowboy', 'manly', 'muscles', 'understand', 'man'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
@@ -97,12 +97,12 @@ angular.module('myApp.view2', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 900 && aud.currentTime < 1000){
-            timerRule = false;
+            timerRule = true;
             arr= ['flute','drummer', 'solo'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1000 && aud.currentTime < 1355){
-            timerRule = false;
+            timerRule = timerRule;
             arr= ['parade','swing dance','jazz','backup singers','flapper', 'stage', 'dont go', 'sepia'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
