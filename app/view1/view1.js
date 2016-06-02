@@ -75,17 +75,17 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 160){
             /*It's OK Now*/
-            arr= ['dance','ok', 'okay', 'ok now', 'girl power','africa','dance crew', 'break dance', 'girl'];
+            arr= ['dance','ok', 'tribe', 'tribal', 'okay', 'ok now', 'girl power','africa','dance crew', 'break dance', 'girl'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
-            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle', 'fighting', 'slapping'];
+            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle', 'fighting', 'slapping', 'military', 'wwii', 'platoon', 'squad'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
             timerRule = false;
-            arr= ['nasa','technology','science','space','mind+blown', 'wow', 'animation', 'robot', 'glitch', 'illustration', 'loop', 'pixel'];
+            arr= ['nasa','technology','science','space','mind blown', 'wow', 'animation', 'robot', 'glitch', 'illustration', 'loop', 'pixel'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
@@ -95,7 +95,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 730 && aud.currentTime < 895){
             timerRule = false;
-            arr= ['beach','jamaica','take+it+easy','slow+motion','time', 'bikini', '420', 'splash'];
+            arr= ['beach','jamaica','take it easy','slow motion','time', 'bikini', '420', 'splash'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
@@ -118,7 +118,7 @@ angular.module('myApp.view1', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return tag = '&tag=' + arr[int];
         } else if(aud.currentTime > 1825 && aud.currentTime < 1900){
-            arr= ['the count','ten','star +over','1 2 3','counting', '', 'one two three', 'love'];
+            arr= ['the count','ten','star over','1 2 3','counting', '', 'one two three', 'love'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey+apiKey;
         }
