@@ -80,12 +80,12 @@ angular.module('myApp.view1', ['ngRoute'])
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 160 && aud.currentTime < 240){
             /*I'm a Soldier*/
-            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle'];
+            arr= ['soldier','war','fight','struggle','guns', 'ninja', 'explosion', 'battle', 'fighting', 'slapping'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 240 && aud.currentTime < 585){
             timerRule = false;
-            arr= ['nasa','technology','science','space','mind+blown', 'wow', 'animation', 'robot'];
+            arr= ['nasa','technology','science','space','mind+blown', 'wow', 'animation', 'robot', 'glitch', 'illustration', 'loop', 'pixel'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 585 && aud.currentTime < 730){
@@ -105,7 +105,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             timerRule = true;
-            arr= ['secret','doin it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'fuck'];
+            arr= ['secret','doin it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'butt', 'horny'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
