@@ -40,10 +40,8 @@ angular.module('myApp.view1', ['ngRoute'])
                 /*Load the image into the DOM*/
                 $scope.preImage = response.data.data.image_original_url;
                 /*Set the length of the image loop based on the frame count*/
-                if(length > 300)
-                    $scope.timer = length *95;
-                else 
-                    $scope.timer = length *190;
+                
+                $scope.timer = length *100;
                 if ($scope.timer < 800)
                     $scope.timer = 2200;
                 if ($scope.timer > 4200 && timerRule == true)
@@ -52,7 +50,6 @@ angular.module('myApp.view1', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
-                    console.log('foobirino');
                     $scope.image = $scope.preImage;
                     $timeout(function(){
                         setTag(api);
