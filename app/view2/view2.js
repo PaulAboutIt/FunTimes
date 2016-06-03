@@ -30,6 +30,11 @@ angular.module('myApp.view2', ['ngRoute'])
           method: 'GET',
           url: urls[api] + tag + rating
         }).then(function successCallback(response) {
+                /*If puased*/
+                if(aud.paused){
+                    $scope.getImageData();
+                    return
+                }
                 /*If image does not work try again*/
                 if (response.data && response.data.data && api == 0 && parseInt(response.data.data.image_width) < 160) {
                     $scope.getImageData();
@@ -52,7 +57,6 @@ angular.module('myApp.view2', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
-                    console.log('foobirino');
                     $scope.image = $scope.preImage;
                     $timeout(function(){
                         setTag(api);
@@ -127,6 +131,8 @@ angular.module('myApp.view2', ['ngRoute'])
             return '';
         }
     }
+    
+    
     
     
     

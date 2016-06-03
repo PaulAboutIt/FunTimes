@@ -13,6 +13,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var length = 2000;
     var aud = document.getElementById("myAudio");
     var gif = document.getElementById("gif");
+    var third = null;
     $scope.timer = 2000;
     var tag = '';
     var timerRule = true;
@@ -30,6 +31,11 @@ angular.module('myApp.view1', ['ngRoute'])
           method: 'GET',
           url: urls[api] + tag + rating
         }).then(function successCallback(response) {
+                if(aud.paused){
+                    $scope.getImageData();
+                    return
+                }
+                    
                 /*If image does not work try again*/
                 if (response.data && response.data.data && api == 0 && parseInt(response.data.data.image_width) < 160) {
                     $scope.getImageData();
@@ -50,6 +56,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
+                    
                     $scope.image = $scope.preImage;
                     $timeout(function(){
                         setTag(api);
