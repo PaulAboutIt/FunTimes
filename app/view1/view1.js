@@ -44,8 +44,8 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.timer = length *100;
                 if ($scope.timer < 800)
                     $scope.timer = 2200;
-                if ($scope.timer > 4200 && timerRule == true)
-                    $scope.timer = 4200;
+                if ($scope.timer > 6200 && timerRule == true)
+                    $scope.timer = 6200;
                 /*Choose the api for the next image at random from the list of gif API's*/
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
