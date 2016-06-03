@@ -9,7 +9,7 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', ['$http', '$timeout', '$scope', function($http, $timeout, $scope) {
+.controller('View2Ctrl', ['$http', '$timeout', '$scope', '$window', function($http, $timeout, $scope, $window) {
     
     var length = 2000;
     var aud = document.getElementById("myAudio");
@@ -18,11 +18,21 @@ angular.module('myApp.view2', ['ngRoute'])
     var tag = '';
     var timerRule = true;
     var api = 0;
+    var mobile = true;
     var urls = [
         'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='/*,*/
         /*'http://replygif.net/api/gifs?tag=',*/
         /*'https://api.popkey.co/v2/media/random?q='*/
     ];
+    $scope.$watch(function(){
+        return $window.innerWidth;
+    }, function(value) {
+        if (value > 600) {
+            mobile = false;
+        } else {
+            mobile = true;
+        }
+    });
     $scope.rating = '&rating=pg';
     $scope.getImageData = function() {
         var rating = $scope.unrated==true?'':'&rating=pg';
@@ -43,7 +53,11 @@ angular.module('myApp.view2', ['ngRoute'])
                 /*Check the frame ount and set the timer length*/
                 length = parseInt(response.data.data.image_frames);
                 /*Load the image into the DOM*/
-                $scope.preImage = response.data.data.image_original_url;
+                if(mobile == false) {
+                    $scope.preImage = response.data.data.image_original_url;
+                } else {
+                    $scope.preImage = response.data.data.fixed_height_downsampled_url;
+                }
                 /*Set the length of the image loop based on the frame count*/
                 if(length > 300)
                     $scope.timer = length *95;
