@@ -17,7 +17,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var third = null;
     $scope.timer = 2000;
     var tag = '';
-    $scope.image = './view1/funtimes.jpg';
+    /*$scope.image = './view1/funtimes.jpg';*/
     var timerRule = true;
     var api = 0;
     var mobile = true;
