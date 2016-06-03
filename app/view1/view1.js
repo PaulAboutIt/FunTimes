@@ -22,12 +22,13 @@ angular.module('myApp.view1', ['ngRoute'])
         /*'http://replygif.net/api/gifs?tag=',*/
         /*'https://api.popkey.co/v2/media/random?q='*/
     ];
-    $scope.rating = '&rating=pg';
+    
     $scope.getImageData = function() {
+        var rating = $scope.unrated==true?'':'&rating=pg';
         
         $http({
           method: 'GET',
-          url: urls[api] + tag + $scope.rating
+          url: urls[api] + tag + rating
         }).then(function successCallback(response) {
                 /*If image does not work try again*/
                 if (response.data && response.data.data && api == 0 && parseInt(response.data.data.image_width) < 160) {
