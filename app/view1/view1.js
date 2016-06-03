@@ -12,6 +12,7 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$http', '$timeout', '$scope', function($http, $timeout, $scope) {
     var length = 2000;
     var aud = document.getElementById("myAudio");
+    var gif = document.getElementById("gif");
     $scope.timer = 2000;
     var tag = '';
     var timerRule = true;
@@ -21,28 +22,23 @@ angular.module('myApp.view1', ['ngRoute'])
         /*'http://replygif.net/api/gifs?tag=',*/
         /*'https://api.popkey.co/v2/media/random?q='*/
     ];
-    $scope.getImage = function() {
+    $scope.rating = '&rating=pg';
+    $scope.getImageData = function() {
         
         $http({
           method: 'GET',
-          url: urls[api] + tag
+          url: urls[api] + tag + $scope.rating
         }).then(function successCallback(response) {
-                
+                /*If image does not work try again*/
                 if (response.data && response.data.data && api == 0 && parseInt(response.data.data.image_width) < 160) {
-                    $scope.getImage();
+                    $scope.getImageData();
                     return;
                 }
-                /*if(response.length < 1) {
-                    $scope.getImage();
-                    return;
-                }*/
-                if (api == 0) {
-                    length = parseInt(response.data.data.image_frames);
-                    $scope.image = response.data.data.image_original_url;
-                } else if (api == 1){   
-                    $scope.image = response[Math.floor((Math.random() * response.length))].file;
-                    length = 250;
-                }
+                /*Check the frame ount and set the timer length*/
+                length = parseInt(response.data.data.image_frames);
+                /*Load the image into the DOM*/
+                $scope.preImage = response.data.data.image_original_url;
+                /*Set the length of the image loop based on the frame count*/
                 if(length > 300)
                     $scope.timer = length *95;
                 else 
@@ -51,22 +47,29 @@ angular.module('myApp.view1', ['ngRoute'])
                     $scope.timer = 2200;
                 if ($scope.timer > 4200 && timerRule == true)
                     $scope.timer = 4200;
-                $timeout(function(){
-                    setTag(api);
-                    $scope.getImage();
-                }, $scope.timer);         
+                /*Choose the api for the next image at random from the list of gif API's*/
                 api = Math.floor((Math.random() * urls.length));
-                
+                /*When the gif loads start the timer and display the gif*/
+                gif.onload = function() {
+                    console.log('foobirino');
+                    $scope.image = $scope.preImage;
+                    $timeout(function(){
+                        setTag(api);
+                        
+                        /*Get the next image data*/
+                        $scope.getImageData();
+                    }, $scope.timer); 
+                }
           }, function errorCallback(response) {
                 api = Math.floor((Math.random() * urls.length));
-                $scope.getImage();
+                $scope.getImageData();
                 return
             // called asynchronously if an error occurs
             // or server returns response with an error status.
           });
         
     };
-    $scope.getImage();
+    $scope.getImageData();
     function setTag(id) {
         var arr = [];
         var apiKey = '';
@@ -105,7 +108,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
             timerRule = true;
-            arr= ['do it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'tits', 'butt', 'horny'];
+            arr= ['do it','want','i dont know','strippers', 'sex', 'boobs', 'pornstar', 'trippy', 'wow', 'sexy', 'horny'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1400 && aud.currentTime < 1725){
