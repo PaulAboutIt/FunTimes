@@ -13,9 +13,11 @@ angular.module('myApp.view1', ['ngRoute'])
     var length = 2000;
     var aud = document.getElementById("myAudio");
     var gif = document.getElementById("gif");
+    var scr = document.getElementById("screen");
     var third = null;
     $scope.timer = 2000;
     var tag = '';
+    $scope.image = './view1/funtimes.jpg';
     var timerRule = true;
     var api = 0;
     var urls = [
@@ -23,7 +25,7 @@ angular.module('myApp.view1', ['ngRoute'])
         /*'http://replygif.net/api/gifs?tag=',*/
         /*'https://api.popkey.co/v2/media/random?q='*/
     ];
-    
+    /*var screen = new freezeframe(scr);*/
     $scope.getImageData = function() {
         var rating = $scope.unrated==true?'':'&rating=pg';
         
@@ -31,8 +33,17 @@ angular.module('myApp.view1', ['ngRoute'])
           method: 'GET',
           url: urls[api] + tag + rating
         }).then(function successCallback(response) {
-                if(aud.paused){
+                
+                
+                if(aud.paused == true && loadedAudio == true){
+                    
                     $scope.getImageData();
+                    if(screen != null) {
+                        /*console.log(screen)
+                        screen.release();*/
+                        
+                    }
+                    
                     return
                 }
                     
@@ -56,11 +67,15 @@ angular.module('myApp.view1', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
+
+                    
                     
                     $scope.image = $scope.preImage;
+
                     $timeout(function(){
+                        /*screen.setup();*/
                         setTag(api);
-                        
+                        /*screen.trigger(); */   
                         /*Get the next image data*/
                         $scope.getImageData();
                     }, $scope.timer); 
