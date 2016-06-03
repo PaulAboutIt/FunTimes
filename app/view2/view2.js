@@ -123,7 +123,7 @@ angular.module('myApp.view2', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1825){
-            arr= ['mexico','samba','salsa','get up','clap', 'mamacita', 'senorita', 'punta'];
+            arr= ['espanol','samba','salsa','get up','clap', 'mamacita', 'senorita', 'punta'];
             int = Math.floor((Math.random() * arr.length));
             return tag = '&tag=' + arr[int];
         } 
