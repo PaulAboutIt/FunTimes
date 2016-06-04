@@ -8,7 +8,7 @@
     img {
         min-width: 420px;
         max-height: 900px;
-        margin:20px auto;
+        margin:0px auto;
         
     }
     p {
@@ -42,26 +42,41 @@
     
 </style>
 
-<audio autoplay controls loop id="myAudio" onloadeddata="audioLoaded()">
+<audio autoplay controls loop id="myAudio" onloadeddata="audioLoaded()" onpause="screenFreeze()" onplay="screenUnfreeze()">
   <source src="https://stream22.mixcloud.com/c/originals/7/e/7/5/d8d9-50a3-4763-876d-773bb7fddfe3.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+
+<label>Unrated</label>
+<input type="checkbox" ng-model="unrated"/>
+<div class="clearfix"></div>
+<div>
+    <span>You will never see this video again!</span>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://funtimesrevolution.com" data-text="Be the first and last person to ever see this, RIGHT NOW!" data-via="PaulAboutIt">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+<!--<span>{{tag}}</span>-->
+<p class="big-screen"><img src="{{image}}" id="screen" class="screen"/></p>
+
+<p><img id="gif" src="{{preImage}}" ng-hide="true"/></p>
+
+
+<img src="{{image}}" class="bg-fill">
+
 <script>
     function audioLoaded() {
         loadedAudio = true;
     }
     
+    function screenFreeze () {
+        screenPaused = true;
+        $('.screen').hide();
+    }
+    function screenUnfreeze () {
+        screenPaused = false;
+        $('.screen').show();
+    }
+    
+
+    
 </script>
-<label>Unrated</label>
-<input type="checkbox" ng-model="unrated"/>
-<div class="clearfix"></div>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://funtimesrevolution.com" data-text="Be the first and last person to ever see this, RIGHT NOW!" data-via="PaulAboutIt">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<!--<span>{{tag}}</span>-->
-<p><img src="{{image}}" id="screen" class="freezeframe"/></p>
-<p><img id="gif" src="{{preImage}}" ng-hide="true"/></p>
-
-
-<img src="{{image}}" class="bg-fill"></div>
-

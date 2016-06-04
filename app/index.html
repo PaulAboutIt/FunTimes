@@ -29,17 +29,18 @@
     </style>
  <!--FREEZE FRAME-->
  
- <link rel="stylesheet" href="/css/freezeframe_styles.css">
+ <!--<link rel="stylesheet" href="/css/freezeframe_styles.css">-->
 
  
  
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>  
-  <script type="text/javascript" src="/js/imagesloaded.pkgd.js"></script>
-<script type="text/javascript" src="/js/freezeframe.js"></script>
- <script>
+  
+    
+  <script>
     var loadedAudio = false;
-    </script>
+    var screenPaused = false;
+  </script>
 
 </head>
 <body>
@@ -54,8 +55,6 @@
   <![endif]-->
 
   <div ng-view></div>
-
-  <span>You will never see this video again!</span>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

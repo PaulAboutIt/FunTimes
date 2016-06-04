@@ -5,7 +5,7 @@ angular.module('myApp.view1', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+    controller: 'View1Ctrl as view'
   });
 }])
 
@@ -35,7 +35,7 @@ angular.module('myApp.view1', ['ngRoute'])
         /*'http://replygif.net/api/gifs?tag=',*/
         /*'https://api.popkey.co/v2/media/random?q='*/
     ];
-    /*var screen = new freezeframe(scr);*/
+
     $scope.getImageData = function() {
         var rating = $scope.unrated==true?'':'&rating=pg';
         
@@ -44,16 +44,9 @@ angular.module('myApp.view1', ['ngRoute'])
           url: urls[api] + tag + rating
         }).then(function successCallback(response) {
                 
-                
                 if(aud.paused == true && loadedAudio == true){
-                    
+                    /*get the next image incase user unpauses*/
                     $scope.getImageData();
-                    if(screen != null) {
-                        /*console.log(screen)
-                        screen.release();*/
-                        
-                    }
-                    
                     return
                 }
                     
@@ -65,11 +58,12 @@ angular.module('myApp.view1', ['ngRoute'])
                 /*Check the frame ount and set the timer length*/
                 length = parseInt(response.data.data.image_frames);
                 /*Load the image into the DOM*/
-                if(mobile == false) {
-                    $scope.preImage = response.data.data.image_original_url;
-                } else {
-                    $scope.preImage = response.data.data.fixed_height_downsampled_url;
-                }
+                
+                    if(mobile == false) {
+                        $scope.preImage = response.data.data.image_original_url;
+                    } else {
+                        $scope.preImage = response.data.data.fixed_height_downsampled_url;
+                    }
                 /*Set the length of the image loop based on the frame count*/
                 
                 $scope.timer = length *100;
@@ -82,9 +76,12 @@ angular.module('myApp.view1', ['ngRoute'])
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
 
-                    
-                    
-                    $scope.image = $scope.preImage;
+                    if (screenPaused == false) {
+                        $scope.image = $scope.preImage;
+                    } else {
+                        $scope.image = $scope.image;
+                    }
+                        
 
                     $timeout(function(){
                         /*screen.setup();*/

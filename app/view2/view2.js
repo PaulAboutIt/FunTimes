@@ -71,7 +71,11 @@ angular.module('myApp.view2', ['ngRoute'])
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
                 gif.onload = function() {
-                    $scope.image = $scope.preImage;
+                    if (screenPaused == false) {
+                        $scope.image = $scope.preImage;
+                    } else {
+                        $scope.image = $scope.image;
+                    }
                     $timeout(function(){
                         setTag(api);
                         
