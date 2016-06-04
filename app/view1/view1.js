@@ -133,7 +133,9 @@ angular.module('myApp.view1', ['ngRoute'])
         } else if(aud.currentTime > 38 && aud.currentTime < 42){
             return $scope.tag = tag = 'earth';
         } else if(aud.currentTime > 42 && aud.currentTime < 52){
-            return $scope.tag = tag = 'time lapse';
+            arr= ['time lapse','future', 'clock'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 52 && aud.currentTime < 56){
             return $scope.tag = tag = 'money';
         } else if(aud.currentTime > 58 && aud.currentTime < 65){
@@ -141,7 +143,9 @@ angular.module('myApp.view1', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 65 && aud.currentTime < 70){
-            return $scope.tag = tag = 'dead';
+            arr= ['rekt','death', 'dead'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 70 && aud.currentTime < 75){
             arr= ['planet earth','nature', 'earth', 'ISS'];
             int = Math.floor((Math.random() * arr.length));
