@@ -152,7 +152,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return $scope.tag = tag = 'earth';
         } else if(aud.currentTime > 126 && aud.currentTime < 131){
             return $scope.tag = tag = 'slow motion';
-        } else if(aud.currentTime > 131 && aud.currentTime < 140){
+        } else if(aud.currentTime > 134 && aud.currentTime < 140){
             return $scope.tag = tag = 'lovers';
         } else if(aud.currentTime > 140 && aud.currentTime < 150){
             return $scope.tag = tag = 'believe';
