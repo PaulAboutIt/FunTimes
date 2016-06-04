@@ -16,7 +16,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var scr = document.getElementById("screen");
     var third = null;
     $scope.timer = 2000;
-    var tag = '';
+    var tag = 'Stevie Wonder';
     /*$scope.image = './view1/funtimes.jpg';*/
     var timerRule = true;
     var api = 0;
@@ -115,7 +115,7 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 26){
             /*It's OK Now*/
-            arr= ['soul','Stevie Wonder', 'rnb'];
+            arr= ['Stevie Wonder','60s','Stevie Wonder', 'funk', 'Stevie Wonder','clap'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 23 && aud.currentTime < 28){
@@ -123,21 +123,29 @@ angular.module('myApp.view1', ['ngRoute'])
             return $scope.tag = tag = 'people';
         } else if(aud.currentTime > 28 && aud.currentTime < 32){
             /*Keep on Learning*/
-            return $scope.tag = tag = 'learn';
+            arr= ['school','smart', 'learn', 'study'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 32 && aud.currentTime < 38){
-            return $scope.tag = tag = 'war';
+            arr= ['guns','explosion', 'wwii'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 38 && aud.currentTime < 42){
             return $scope.tag = tag = 'earth';
-        } else if(aud.currentTime > 42 && aud.currentTime < 51){
+        } else if(aud.currentTime > 42 && aud.currentTime < 52){
             return $scope.tag = tag = 'time lapse';
-        } else if(aud.currentTime > 51 && aud.currentTime < 56){
+        } else if(aud.currentTime > 52 && aud.currentTime < 56){
             return $scope.tag = tag = 'money';
         } else if(aud.currentTime > 58 && aud.currentTime < 65){
-            return $scope.tag = tag = 'lie';
-        } else if(aud.currentTime > 65 && aud.currentTime < 69){
+            arr= ['lies','liar', 'lie'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
+        } else if(aud.currentTime > 65 && aud.currentTime < 70){
             return $scope.tag = tag = 'dead';
-        } else if(aud.currentTime > 69 && aud.currentTime < 75){
-            return $scope.tag = tag = 'earth';
+        } else if(aud.currentTime > 70 && aud.currentTime < 75){
+            arr= ['plnet earth','nature', 'planet'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 75 && aud.currentTime < 85){
             return $scope.tag = tag = 'time lapse';
         } else if(aud.currentTime > 85 && aud.currentTime < 105){
@@ -145,20 +153,28 @@ angular.module('myApp.view1', ['ngRoute'])
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 105 && aud.currentTime < 113){
-            return $scope.tag = tag = 'teachers';
+            arr= ['school','teach', 'teachers', 'school bus'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 113 && aud.currentTime < 123){
-            return $scope.tag = tag = 'preacher';
+            arr= ['church','preacher', 'preach', 'god'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         }  else if(aud.currentTime > 123 && aud.currentTime < 126){
             return $scope.tag = tag = 'earth';
         } else if(aud.currentTime > 126 && aud.currentTime < 131){
             return $scope.tag = tag = 'slow motion';
         } else if(aud.currentTime > 134 && aud.currentTime < 140){
-            return $scope.tag = tag = 'lovers';
+            arr= ['love','kiss', 'i love you'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 140 && aud.currentTime < 150){
-            return $scope.tag = tag = 'believe';
-        } else if(aud.currentTime > 150 && aud.currentTime < 160){
+            arr= ['miracle','miracles', 'believe', 'trust'];
+            int = Math.floor((Math.random() * arr.length));
+            return $scope.tag = tag = arr[int];
+        } else if(aud.currentTime > 153 && aud.currentTime < 162){
             return $scope.tag = tag = 'sleep';
-        } else if(aud.currentTime > 160 && aud.currentTime < 170){
+        } else if(aud.currentTime > 162 && aud.currentTime < 170){
             return $scope.tag = tag = 'slow motion';
         } else if(aud.currentTime > 170 && aud.currentTime < 184){
             arr= ['soul','Stevie Wonder', 'rnb'];
