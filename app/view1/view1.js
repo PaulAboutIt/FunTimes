@@ -74,23 +74,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 /*Choose the api for the next image at random from the list of gif API's*/
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
-                gif.onload = function() {
-
-                    if (screenPaused == false) {
-                        $scope.image = $scope.preImage;
-                    } else {
-                        $scope.image = $scope.image;
-                    }
-                        
-
-                    $timeout(function(){
-                        /*screen.setup();*/
-                        setTag(api);
-                        /*screen.trigger(); */   
-                        /*Get the next image data*/
-                        $scope.getImageData();
-                    }, $scope.timer); 
-                }
+                
           }, function errorCallback(response) {
                 api = Math.floor((Math.random() * urls.length));
                 $scope.getImageData();
@@ -100,6 +84,23 @@ angular.module('myApp.view1', ['ngRoute'])
           });
         
     };
+    gif.onload = function() {
+
+        if (screenPaused == false) {
+            $scope.image = $scope.preImage;
+        } else {
+            $scope.image = $scope.image;
+        }
+
+
+        $timeout(function(){
+            /*screen.setup();*/
+            setTag(api);
+            /*screen.trigger(); */   
+            /*Get the next image data*/
+            $scope.getImageData();
+        }, $scope.timer); 
+    }
     $scope.getImageData();
     function setTag(id) {
         var arr = [];

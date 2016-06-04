@@ -58,6 +58,7 @@ angular.module('myApp.view2', ['ngRoute'])
                 } else {
                     $scope.preImage = response.data.data.fixed_height_downsampled_url;
                 }
+                
                 /*Set the length of the image loop based on the frame count*/
                 if(length > 300)
                     $scope.timer = length *95;
@@ -70,19 +71,7 @@ angular.module('myApp.view2', ['ngRoute'])
                 /*Choose the api for the next image at random from the list of gif API's*/
                 api = Math.floor((Math.random() * urls.length));
                 /*When the gif loads start the timer and display the gif*/
-                gif.onload = function() {
-                    if (screenPaused == false) {
-                        $scope.image = $scope.preImage;
-                    } else {
-                        $scope.image = $scope.image;
-                    }
-                    $timeout(function(){
-                        setTag(api);
-                        
-                        /*Get the next image data*/
-                        $scope.getImageData();
-                    }, $scope.timer); 
-                }
+                
           }, function errorCallback(response) {
                 api = Math.floor((Math.random() * urls.length));
                 $scope.getImageData();
@@ -92,6 +81,20 @@ angular.module('myApp.view2', ['ngRoute'])
           });
         
     };
+    gif.onload = function() {
+        if (screenPaused == false) {
+            
+            $scope.image = $scope.preImage;
+        } else {
+            return
+        }
+        $timeout(function(){
+            setTag(api);
+
+            /*Get the next image data*/
+            $scope.getImageData();
+        }, $scope.timer); 
+    }
     $scope.getImageData();
     function setTag(id) {
         $scope.time = aud.currentTime;
