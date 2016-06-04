@@ -135,7 +135,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 895 && aud.currentTime < 1168){
             timerRule = false;
-            arr= ['bernie sanders','porn','drugs','money','win', 'donald trump', 'oil', 'animation', 'cash', 'omg'];
+            arr= ['bernie sanders','money', 'bernie+sanders', 'oil', 'millions', 'cash'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } else if(aud.currentTime > 1168 && aud.currentTime < 1400){
