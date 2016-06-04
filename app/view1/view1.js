@@ -115,7 +115,7 @@ angular.module('myApp.view1', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 26){
             /*It's OK Now*/
-            arr= ['Stevie Wonder','60s','Stevie Wonder', 'funk', 'Stevie Wonder','clap'];
+            arr= ['Stevie Wonder','60s','motown', 'funk', 'Stevie Wonder','clap'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 23 && aud.currentTime < 28){
