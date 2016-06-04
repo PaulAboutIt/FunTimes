@@ -121,12 +121,12 @@ angular.module('myApp.view1', ['ngRoute'])
         } else if(aud.currentTime > 23 && aud.currentTime < 28){
             /*People*/
             return $scope.tag = tag = 'people';
-        } else if(aud.currentTime > 28 && aud.currentTime < 33){
+        } else if(aud.currentTime > 28 && aud.currentTime < 32){
             /*Keep on Learning*/
             return $scope.tag = tag = 'learn';
-        } else if(aud.currentTime > 33 && aud.currentTime < 36){
+        } else if(aud.currentTime > 32 && aud.currentTime < 38){
             return $scope.tag = tag = 'war';
-        } else if(aud.currentTime > 36 && aud.currentTime < 42){
+        } else if(aud.currentTime > 38 && aud.currentTime < 42){
             return $scope.tag = tag = 'earth';
         } else if(aud.currentTime > 42 && aud.currentTime < 51){
             return $scope.tag = tag = 'time lapse';
@@ -134,9 +134,9 @@ angular.module('myApp.view1', ['ngRoute'])
             return $scope.tag = tag = 'money';
         } else if(aud.currentTime > 58 && aud.currentTime < 65){
             return $scope.tag = tag = 'lie';
-        } else if(aud.currentTime > 65 && aud.currentTime < 67){
+        } else if(aud.currentTime > 65 && aud.currentTime < 69){
             return $scope.tag = tag = 'dead';
-        } else if(aud.currentTime > 67 && aud.currentTime < 75){
+        } else if(aud.currentTime > 69 && aud.currentTime < 75){
             return $scope.tag = tag = 'earth';
         } else if(aud.currentTime > 75 && aud.currentTime < 85){
             return $scope.tag = tag = 'time lapse';
