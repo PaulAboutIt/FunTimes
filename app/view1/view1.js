@@ -143,7 +143,7 @@ angular.module('myApp.view1', ['ngRoute'])
         } else if(aud.currentTime > 65 && aud.currentTime < 70){
             return $scope.tag = tag = 'dead';
         } else if(aud.currentTime > 70 && aud.currentTime < 75){
-            arr= ['plnet earth','nature', 'planet'];
+            arr= ['planet earth','nature', 'earth', 'ISS'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int];
         } else if(aud.currentTime > 75 && aud.currentTime < 85){
