@@ -127,7 +127,7 @@ angular.module('myApp.view3', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 203){
             /*It's OK Now*/
-            arr= ['butt','ass', 'boobs','titties', 'dance', 'strippers', 'strip+club',  'big+ass', 'dat+ass', 'pornstar', 'twerk', 'ho', 'back+dat+ass+up'];
+            arr= ['butt','ass', 'boobs','titties', 'dance', 'stripper', 'strip+club',  'big+ass', 'dat+ass', 'pornstar', 'twerk', 'ho', 'back+dat+ass+up', 'bounce'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 200 && aud.currentTime < 230){
@@ -137,7 +137,7 @@ angular.module('myApp.view3', ['ngRoute'])
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 230 && aud.currentTime < 385){
             timerRule = true;
-            arr= ['butts','ass', 'boobs', 'titties', 'dance','twerk', 'strippers', 'strip+club','strip', 'clap'];
+            arr= ['butts','ass', 'boobs', 'titties', 'dance','twerk', 'strippers', 'strip+club', 'clap'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } 
