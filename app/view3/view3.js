@@ -127,17 +127,17 @@ angular.module('myApp.view3', ['ngRoute'])
         var int = Math.floor((Math.random() * 7));
         if(aud.currentTime < 203){
             /*It's OK Now*/
-            arr= ['butt','ass', 'boobs', 'titties', 'dance', 'strippers', 'strip club','hood', 'dancer', 'big ass', 'dat ass', 'pornstar', 'porn', 'porn star', 'club scene', 'da club', 'drinks'];
+            arr= ['butt','ass', 'boobs', 'tits','titties', 'dance', 'strippers', 'strip+club',  'big+ass', 'dat+ass', 'pornstar', 'da+club', 'twerk', 'ho', 'back+dat+ass+up'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 200 && aud.currentTime < 230){
             /*I'm a Soldier*/
-            arr= ['drop','fail','fall'];
+            arr= ['drop','ass','fall'];
             int = Math.floor((Math.random() * arr.length));
             return $scope.tag = tag = arr[int]+apiKey;
         } else if(aud.currentTime > 230 && aud.currentTime < 385){
             timerRule = true;
-            arr= ['butts','ass', 'boobs', 'titties', 'dance', 'strippers', 'strip club','hood'];
+            arr= ['butts','ass', 'boobs', 'titties', 'dance','twerk', 'strippers', 'strip+club','strip', 'clap'];
             int = Math.floor((Math.random() * arr.length));
             return tag = arr[int]+apiKey;
         } 
