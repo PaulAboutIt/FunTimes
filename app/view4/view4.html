@@ -1,0 +1,73 @@
+<style>
+    body{
+        background: #111;
+        margin: auto;
+        text-align: center;
+        height: 100%;
+    }
+    img {
+    
+        min-width: 420px;
+        max-width: 800px;
+        max-height: 900px;
+        margin:20px auto;
+        
+    }
+    p {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+    span {
+        color: #bbb;
+    }
+    label {
+        color: #ddd
+    }
+    
+    
+    .bg-fill {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        opacity: .1;
+        -webkit-filter: blur(15px);
+        filter:blur(15px);
+        z-index: 0;
+        pointer-events: none;
+    }
+</style>
+
+<audio autoplay controls loop id="myAudio" onloadeddata="audioLoaded()" onpause="screenFreeze()" onplay="screenUnfreeze()">
+  <source src="./view3/datass.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<div class="clearfix" ng-show="mobile == true"></div>
+<script>
+    function audioLoaded() {
+        loadedAudio = true;
+    }
+    /*Pause the gif*/
+    function screenFreeze () {
+        screenPaused = true;
+        $('.screen').hide();
+    }
+    function screenUnfreeze () {
+        screenPaused = false;
+        $('.screen').show();
+    }
+</script>
+<!--<label for="unrated">Unrated</label>
+<input type="checkbox" id="unrated" ng-model="unrated"/>-->
+<div class="clearfix"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://funtimesrevolution.com" data-text="Be the first and last person to ever see this, RIGHT NOW!" data-via="PaulAboutIt">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!--<span>{{tag}}</span>-->
+<p><img src="{{image}}" class="screen" /></p>
+<p><img id="gif" src="{{preImage}}" ng-hide="true"/></p>
+<img src="{{image}}" class="bg-fill">
+
